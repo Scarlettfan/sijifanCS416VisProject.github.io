@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="./script.js"></script>
+
+<head>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+
+<body onload="fetchData()">
+    <div id="layout">
+        <div id="searchContainer" style="z-index: 100; position: fixed; width: 100%">
+            <input type="text" id="myInput" placeholder="Search for states.." title="Type in a name" />
+            <ul id="myUL"></ul>
+        </div>
+        <div id="titleText">Covid-19 statewide data</div>
+        <div id="titleDescription"> NOTE: <br>
+            The Delta Variant was first discovered in 2020 India. The Delta Variant is more contagious than the other virus strains. As of December 20, 2021, Omicron Variant has been detected in every U.S. state and territory and continues to be the dominant variant in the United States. This can potentially explain why the confirmed cases increased the most in January, 2021 and January 2020.
+            <br><br>Source: <a href>https://www.yalemedicine.org/news/5-things-to-know-delta-variant-covid </a>
+            <br>Source: <a href>https://www.cdc.gov/coronavirus/2019-ncov/variants/omicron-variant.html</a>
+            <br>
+            <br>There is a noticeable trend from this data set. The confirmed cases were decreasing in the first half of the year in 2021 but were increasing in the second half of the year.  The reason can be caused by the Delta Variant explosion in mid 2021 across the states. According to a study led by the University of Cincinnati, “rural counties had 2.4 times more infections per 100,000 people than urban areas between July 1 and Aug. 31, 2021, when the delta variant surged across the United States.”
+            <br><br>Source: <a href>https://www.uc.edu/news/articles/2022/02/delta-variant-of-covid-19-hit-rural-america-especially-hard.html</a>
+     </div>
+        <div class="slider">
+            <label>Year </label>
+            <div class="rt-container">
+                <div class="col-rt-12">
+                    <div class="Scriptcontent">
+                        <fieldset class="range__field">
+                            <input class="range" type="range" value="2021" min="2020" max="2022" id="inputYear" />
+                            <svg role="presentation" width="100%" height="10">
+                  <refct
+                    class="range__tick"
+                    x="0%"
+                    y="3"
+                    width="1"
+                    height="10"
+                  ></refct>
+                  <rect
+                    class="range__tick"
+                    x="50%"
+                    y="3"
+                    width="1"
+                    height="10"
+                  ></rect>
+                  <rect
+                    class="range__tick"
+                    x="100%"
+                    y="3"
+                    width="1"
+                    height="10"
+                  ></rect>
+                </svg>
+                            <svg role="presentation" width="100%" height="14">
+                  <text class="range__point" x="0%" y="14" text-anchor="start">
+                    2020
+                  </text>
+                  <text
+                    class="range__point"
+                    x="50%"
+                    y="14"
+                    text-anchor="middle"
+                  >
+                    2021
+                  </text>
+                  <text class="range__point" x="100%" y="14" text-anchor="end">
+                    2022
+                  </text>
+                </svg>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="segmentControl">
+            <button id="firstButton">Confirmed</button>
+            <button id="secondButton">Death</button>
+        </div>
+        <div id="segmentControl2" style="visibility: hidden">
+            <button id="countButton">Count</button>
+            <button id="percentageButton">Percentage</button>
+
+            <div id = "percentageExplanation">
+                (the death pecentage is considered as death rate, which is calculated based on <br />the total monthly death cases over total monthly confirmed cases)
+            </div>
+        </div>
+
+        <div id="container">
+            <svg id="chart_monthly" viewBox="0 0 750 500" />
+        </div>
+
+        <div id="containera">
+            <svg id="chart_overview1" viewBox="0 0 750 500" />
+        </div>
+        <div id="containerb">
+            <svg id="chart_overview2" viewBox="0 0 750 500" />
+        </div>
+        <div id="containerc">
+            <svg id="chart_overview3" viewBox="0 0 750 500" />
+        </div>
+    </div>
+
+    <!--    slider-->
+
+    <!--slider end-->
+</body>
+<script></script>
+
+</html>
